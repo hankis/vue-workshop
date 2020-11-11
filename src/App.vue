@@ -15,12 +15,12 @@ import Navigation from '@/components/Navigation.vue';
 export default {
 	data: () => ({
 		routes: [
-			// {
-			// 	label: 'Lesson 1 HW',
-			// 	link: {
-			// 		name: 'l1',
-			// 	},
-			// },
+			{
+				label: 'Lesson 1 HW',
+				link: {
+					name: 'l1',
+				},
+			},
 		],
 	}),
 
