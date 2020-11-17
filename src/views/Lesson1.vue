@@ -26,9 +26,8 @@
 					</thead>
 					<tbody>
 						<tr class="tab-row" :class="[todo.completed? 'table-success' : 'table-default']"
-                v-for="(todo, index) in seachResults"
-                :key="todo.id"
-                v-show="isShowOnList(index)">
+                v-for="todo in itemsOnPage"
+                :key="todo.id">
 							<th scope="row">
                 <a href="" @click.prevent="editTodo(todo)">{{todo.title}}</a>
               </th>
@@ -108,9 +107,9 @@ export default {
 	name: 'Lesson1',
 
 	data: () => ({
-    todos: null,
-    search: null,
-    currentPage: null,
+    todos: [],
+    search: '',
+    currentPage: 1,
     selectedTodo: null,
 	}),
 
@@ -123,6 +122,9 @@ export default {
     },
     pages() {
       return this.seachResults ? Math.ceil(this.seachResults.length / 10) : 1;
+    },
+    itemsOnPage() {
+      return this.seachResults.filter((item, idx) => this.isShowOnList(idx));
     },
 	},
 
