@@ -27,6 +27,12 @@ export default {
 					name: 'l2',
 				},
 			},
+			{
+				label: 'Lesson 3 HW',
+				link: {
+					name: 'l3',
+				},
+			},
 		],
 	}),
 
